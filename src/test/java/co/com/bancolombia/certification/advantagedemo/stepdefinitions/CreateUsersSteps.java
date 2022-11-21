@@ -1,5 +1,6 @@
 package co.com.bancolombia.certification.advantagedemo.stepdefinitions;
 
+import co.com.bancolombia.certification.advantagedemo.tasks.BuyLaptop;
 import co.com.bancolombia.certification.advantagedemo.tasks.CreateUsers;
 import co.com.bancolombia.certification.advantagedemo.tasks.LoginUsers;
 import co.com.bancolombia.certification.advantagedemo.utils.MyDriversWeb;
@@ -23,7 +24,7 @@ public class CreateUsersSteps {
 
     @When("^I enter the information to create the user$")
     public void iEnterTheInformationToCreateTheUser() {
-        theActorInTheSpotlight().attemptsTo(CreateUsers.createUsers());
+        theActorInTheSpotlight().attemptsTo(CreateUsers.createUsers(), BuyLaptop.buyLaptop());
     }
 
     @Then("^I validate the correct user was created$")
